@@ -5,6 +5,8 @@ declare
     -- colocar todas las varibles a utilizar
 Begin
 
+
+exeption
     null;
 
 end;
