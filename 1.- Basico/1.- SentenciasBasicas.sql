@@ -11,3 +11,13 @@ end;
 
 
 */
+
+SET SERVEROUTPUT ON
+
+DECLARE NOMBRE VARCHAR(100);
+
+BEGIN
+NOMBRE:= 'Javier';
+dbms_output.put_line(NOMBRE);
+
+END;
