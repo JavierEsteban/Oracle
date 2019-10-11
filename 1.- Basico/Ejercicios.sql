@@ -48,4 +48,42 @@ DBMS_OUTPUT.PUT_LINE(NOMBREDIA);
 
 END;
         
-        
+
+/*
+
+Crear un Bloque anonimo para determinar si un número es par.
+
+*/
+DECLARE
+    fechaactual   DATE;
+    dia           NUMBER;
+BEGIN
+    SELECT
+        TO_CHAR(SYSDATE, 'DD')
+    INTO dia
+    FROM
+        dual;
+IF MOD(dia, 2) = 0 THEN
+        dbms_output.put_line('ES UN DÍA PAR');
+    ELSE
+        dbms_output.put_line('ES UN DÍA IMPAR');
+    END IF;
+
+END;
+
+
+SELECT  SALARY, 
+    CASE 
+        WHEN  MOD(SALARY,2) = 0 THEN 'PAR'
+        ELSE 'IMPAR'
+        END AS SALARY 
+FROM EMPLOYEES;
+
+SET SERVEROUTPUT ON
+DECLARE DIA NUMBER;
+BEGIN
+
+SELECT TO_CHAR(SYSDATE, 'DD') INTO DIA FROM DUAL;
+DBMS_OUTPUT.PUT_LINE(DIA);
+
+END;        
