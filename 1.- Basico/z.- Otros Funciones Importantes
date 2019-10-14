@@ -1,0 +1,35 @@
+/*
+FUNCIONES DE CONVERSIÓN
+TO_CHAR
+TO_NUMBER
+TO_DATE
+*/
+
+ALTER SESSION SET nls_date_format = 'DD/MM/RR HH24:MI:SS';
+
+
+SELECT TO_DATE('10-OCT-2019') AS FECHAS FROM DUAL;
+SELECT TO_DATE('10-SEP-2019') AS FECHAS FROM DUAL;
+SELECT TO_DATE('25-DIC-2019') AS FECHAS FROM DUAL;
+
+SELECT TO_CHAR(sysdate, 'YYMMDD HHMMSS') as hiredate FROM DUAL;
+SELECT TO_CHAR(SYSDATE, 'YYYY-MM-DD HH:MM:SS' ) as hiredate  FROM DUAL;
+
+
+-- Fecha Actual del Sistema
+
+SELECT SYSDATE FROM DUAL;
+
+-- FUNCION AGREGAR o DIMINUIR A FECHAS
+
+SELECT SYSDATE, ADD_MONTHS(SYSDATE, -1) SYSDATEMENOS, ADD_MONTHS(SYSDATE, + 1) SYSDATEMAS FROM DUAL;
+
+-- Funcion between; MESES entre las fechas.
+SELECT
+    months_between('30/08/19', '30/10/19') AS f1,
+    round(months_between('11/06/19', '30/10/19'),1) AS f2,
+    round(months_between('10/08/19', '30/10/19'),1) AS f3,
+    months_between('30/07/19', '30/10/19') AS f4
+FROM
+    dual;
+    
