@@ -32,4 +32,11 @@ SELECT
     months_between('30/07/19', '30/10/19') AS f4
 FROM
     dual;
+
+
+SELECT
+    SYSDATE,
+    LAST_DAY(SYSDATE),
+    LAST_DAY(SYSDATE) + 1
+FROM DUAL;
     
